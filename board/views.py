@@ -20,7 +20,7 @@ def ad_detail(request, ad_id):
     visits_counter(ad_id, get_client_ip(request), request.user.id)
 
     # получим счетчики
-    # TODO: лучше чисты sql через union
+    # TODO: лучше чистый sql через union и тоже закешировать
     counter_register = CounterReviewRegisteredUser.objects.get(pk=ad_id).counter
     counter_all = CounterReviewUser.objects.get(pk=ad_id).counter
 
